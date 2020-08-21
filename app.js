@@ -2,6 +2,7 @@ var express = require('express')
 
 var app = express()
 app.set('view engine', 'hbs')
+var port = process.env.PORT || 4000
 
 var hbs = require('hbs')
 hbs.registerPartials(__dirname + '/views/partials')
@@ -31,6 +32,6 @@ app.get('/register', (req, res) => {
     })
 })
 
-app.listen(4000, () => {
-    console.log('you are listining at port 4000')
+app.listen(port, () => {
+    console.log(`you are listining on port ${port}`)
 })
